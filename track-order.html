@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Order - FarmDirect</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>🌾 FarmDirect</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="track-order.html" class="active">Track Order</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="track-order-page">
+        <h2>Track Your Order</h2>
+        <div class="track-container">
+            <div class="track-search">
+                <input type="text" id="orderIdInput" placeholder="Enter Order ID">
+                <button class="btn btn-primary" onclick="trackOrder()">Track</button>
+            </div>
+
+            <div id="orderTracking" class="order-tracking">
+                <!-- Order tracking details will be shown here -->
+            </div>
+        </div>
+    </main>
+
+    <script src="js/track-order.js"></script>
+</body>
+</html>
+

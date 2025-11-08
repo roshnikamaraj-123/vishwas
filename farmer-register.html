@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Register - FarmDirect</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>🌾 FarmDirect</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="farmer-login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="auth-container">
+        <div class="auth-card">
+            <h2>Farmer Registration</h2>
+            <form id="farmerRegisterForm">
+                <div class="form-group">
+                    <label for="farmerName">Full Name</label>
+                    <input type="text" id="farmerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="farmerEmailReg">Email</label>
+                    <input type="email" id="farmerEmailReg" required>
+                </div>
+                <div class="form-group">
+                    <label for="farmerPhone">Phone Number</label>
+                    <input type="tel" id="farmerPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="farmerAddress">Address</label>
+                    <textarea id="farmerAddress" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="farmerPasswordReg">Password</label>
+                    <input type="password" id="farmerPasswordReg" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+            <p class="auth-link">Already registered? <a href="farmer-login.html">Login here</a></p>
+        </div>
+    </main>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>
+

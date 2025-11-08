@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - FarmDirect</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>🌾 FarmDirect</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="customer-login.html">Customer</a></li>
+                <li><a href="cart.html">Cart (<span id="cartCount">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="products-page">
+        <div class="products-header">
+            <h2>Available Products</h2>
+            <div class="filter-section">
+                <select id="filterMode" class="filter-select">
+                    <option value="all">All Modes</option>
+                    <option value="direct">Direct Sale</option>
+                    <option value="auction">Auction</option>
+                    <option value="contract">Contract Agreement</option>
+                </select>
+                <select id="filterCategory" class="filter-select">
+                    <option value="all">All Categories</option>
+                    <option value="vegetables">Vegetables</option>
+                    <option value="fruits">Fruits</option>
+                    <option value="grains">Grains & Crops</option>
+                    <option value="pulses">Pulses</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="productsGrid" class="products-grid">
+            <!-- Products will be loaded here -->
+        </div>
+    </main>
+
+    <script src="js/products.js"></script>
+</body>
+</html>
+

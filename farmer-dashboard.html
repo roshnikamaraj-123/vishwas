@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Dashboard - FarmDirect</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>🌾 FarmDirect</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="farmer-dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="farmer-orders.html">Orders</a></li>
+                <li><a href="#" id="farmerLogout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="dashboard-container">
+        <div class="dashboard-header">
+            <h2>Farmer Dashboard</h2>
+            <button class="btn btn-primary" onclick="showAddProductModal()">+ Add New Product</button>
+        </div>
+
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <h3 id="totalProducts">0</h3>
+                <p>Total Products</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="totalOrders">0</h3>
+                <p>Total Orders</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="totalRevenue">₹0</h3>
+                <p>Total Revenue</p>
+            </div>
+        </div>
+
+        <div class="products-section">
+            <h3>My Products</h3>
+            <div id="productsList" class="products-grid">
+                <!-- Products will be loaded here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Add Product Modal -->
+    <div id="addProductModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAddProductModal()">&times;</span>
+            <h2>Add New Product</h2>
+            <form id="addProductForm">
+                <div class="form-group">
+                    <label>Capture Product Image</label>
+                    <div class="camera-container">
+                        <video id="video" autoplay></video>
+                        <canvas id="canvas" style="display: none;"></canvas>
+                        <div class="camera-controls">
+                            <button type="button" class="btn btn-secondary" onclick="startCamera()">Start Camera</button>
+                            <button type="button" class="btn btn-secondary" onclick="captureImage()">Capture</button>
+                            <button type="button" class="btn btn-secondary" onclick="stopCamera()">Stop Camera</button>
+                        </div>
+                        <div id="capturedImagePreview" class="image-preview"></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="productName">Product Name</label>
+                    <select id="productName" required>
+                        <option value="">Select Product</option>
+                        <optgroup label="Vegetables">
+                            <option value="Tomato">Tomato</option>
+                            <option value="Onion">Onion</option>
+                            <option value="Potato">Potato</option>
+                            <option value="Carrot">Carrot</option>
+                            <option value="Cabbage">Cabbage</option>
+                            <option value="Cauliflower">Cauliflower</option>
+                            <option value="Brinjal">Brinjal</option>
+                            <option value="Okra">Okra</option>
+                            <option value="Cucumber">Cucumber</option>
+                            <option value="Pepper">Pepper</option>
+                        </optgroup>
+                        <optgroup label="Fruits">
+                            <option value="Apple">Apple</option>
+                            <option value="Banana">Banana</option>
+                            <option value="Orange">Orange</option>
+                            <option value="Mango">Mango</option>
+                            <option value="Grapes">Grapes</option>
+                            <option value="Watermelon">Watermelon</option>
+                            <option value="Papaya">Papaya</option>
+                        </optgroup>
+                        <optgroup label="Grains & Crops">
+                            <option value="Wheat">Wheat</option>
+                            <option value="Paddy">Paddy</option>
+                            <option value="Rice">Rice</option>
+                            <option value="Corn">Corn</option>
+                            <option value="Barley">Barley</option>
+                        </optgroup>
+                        <optgroup label="Pulses">
+                            <option value="Lentil">Lentil</option>
+                            <option value="Chickpea">Chickpea</option>
+                            <option value="Black Gram">Black Gram</option>
+                            <option value="Green Gram">Green Gram</option>
+                            <option value="Red Kidney Bean">Red Kidney Bean</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="productPrice">Price (₹ per kg/unit)</label>
+                    <input type="number" id="productPrice" step="0.01" min="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="sellingMode">Mode of Selling</label>
+                    <select id="sellingMode" required>
+                        <option value="">Select Mode</option>
+                        <option value="direct">Direct Sale</option>
+                        <option value="auction">Auction</option>
+                        <option value="contract">Contract Agreement</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="productQuantity">Quantity (kg/unit)</label>
+                    <input type="number" id="productQuantity" step="0.01" min="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="expiryDate">Expiry Date</label>
+                    <input type="date" id="expiryDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="productDescription">Description (Optional)</label>
+                    <textarea id="productDescription" rows="3"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Add Product</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/farmer-dashboard.js"></script>
+</body>
+</html>
+
